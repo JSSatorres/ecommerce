@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.wheather__container{
+    height: 66vh;
+    display: flex;
+    align-items: center;
+
+    &__searchCity{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+    }
+    &__showCities{
+        width: 70%;
+        height: 75%;
+        min-height: 75%;
+        display: flex;
+        justify-content: center;
+    }
+    &__result{
+        width: 70%;
+        height: 75%;
+        min-height: 75%;
+        display: flex;
+        justify-content: center;
+    }
+}

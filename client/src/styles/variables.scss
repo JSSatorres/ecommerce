@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,700&display=swap');
+
+$Rubik : 'Rubik', sans-serif;
+
+//colors
+$dark:#23394d;
+$darkLight:#243f58;
+$light: #fff;
+$grey:rgba(238, 237, 237, 0.4);
+$greyDark:rgba(206, 202, 202, 0.4);;
+$primary: #e07924;
+$secondary: #64b2ff;
+$tertiary: #d36613;
+$quarter: rgb(162,162,246);
+$danger:rgb(240, 37, 37);
+$bg: rgb(244,244,255);
+
+//spacing
+$spacing-md:16px;
+$spacing-lg:32px;
+
+//border radiius
+$borderRadius-lg:32px;
+$borderRadius-md:12px;
+$borderRadius-sm:6px;
+
+//box-shadow
+$boxShadow:inset -4px -4px 8px rgba(120, 120, 120, .4), inset 3px 3px 1px rgba(146, 146, 146, 0.4);
+
+//font size
+$fonstSize-lg:32px;
+$fonstSize-md:24px;
+$fonstSize-sm:18px;
+$fonstSize-xs:12px;
+
+//icons
+
+
+
+// header hight 
+$headerHight: 70px;
+
+@mixin breakpoint($point){
+    @if $point == md{
+        //768px
+        @media (min-width:48em){
+            @content;
+        }
+    }
+}
+
+//button
+
+@mixin buttonStandar {
+    border: .25em solid  $dark;
+        padding: 1em 3em;
+        color: $primary;
+        font-size: 15px;
+        font-weight: bold;
+        background-color: $darkLight;
+        border-radius: 1em;
+        outline: none;
+        position: relative;
+        transition: all 0.3s;
+              
+        &:hover {
+        cursor: pointer;
+        color: $dark;
+        background-color: $primary;
+       } 
+       
+        &:active {
+        box-shadow: 0 0 0.6em .25em $tertiary,
+               inset 0 0 1.5em 1.25em $tertiary;
+       }
+}
+
+
+@mixin buttonSmall {
+    border: .25em solid  $dark;
+        padding: 0.5em 0.5em;
+        color: $primary;
+        font-size: 10px;
+        font-weight: bold;
+        background-color: $darkLight;
+        border-radius: 0.5em;
+        outline: none;
+        position: relative;
+        transition: all 0.3s;
+              
+        &:hover {
+        cursor: pointer;
+        color: $dark;
+        background-color: $primary;
+       } 
+       
+        &:active {
+        box-shadow: 0 0 0.6em .25em $tertiary,
+               inset 0 0 1.5em 1.25em $tertiary;
+       }
+}
+
+@mixin inputStandar {
+    margin-bottom: 50px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid rgb(224, 218, 218);
+    box-shadow: inset 0.5px 0.5px 2px rgb(97, 97, 97),inset -0.5px -0.5px 2px rgb(0, 0, 0);
+
+    &:focus{
+        border-color:$primary; 
+        outline: 4px solid transparent;
+        
+    }
+   
+}

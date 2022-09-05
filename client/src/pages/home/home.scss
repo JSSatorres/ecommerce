@@ -1,0 +1,40 @@
+@import '../../styles/variables.scss';
+
+.ShowCityWheatheContainer{
+    background:$grey;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    padding: 105px 30px;
+    color: $dark;
+    border: 1px solid (120, 120, 120, .4);
+    border-radius: $borderRadius-sm;
+    box-shadow:$boxShadow;
+    width: 80%;
+    min-height:50vh;
+
+    &__name{
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: $fonstSize-lg;
+        border-color:$primary ;        
+    }
+
+    &__div{
+       display: flex;
+       flex-direction: row;
+       padding: 10px;
+       justify-content: space-between;
+        &__country{
+            font-size:  $fonstSize-sm;
+        }
+        &__state{
+            font-size:  $fonstSize-sm;
+        }
+        
+        &__button{
+            @include buttonSmall;
+        }
+    }
+}
+

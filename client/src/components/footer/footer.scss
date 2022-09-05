@@ -1,0 +1,82 @@
+@import '../../styles/variables.scss';
+
+
+
+  
+  .footerContainer{
+    margin-top: 100px;
+    height: 150px;
+    background-color: $darkLight;
+    color:$light;
+    display: flex ;
+
+    @media screen and (max-width:960px){
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 170px;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s all ease;
+        /* background-color: aqua; */
+    }
+
+    &__left{
+        @media screen and (max-width:960px){
+         margin-top: 25px;
+        }
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        &__logoContainer{            
+            display: flex;
+            align-items: center;
+            color: $primary;
+            font-size: $fonstSize-md;
+            margin-bottom: 3px;
+
+            p{
+               &:nth-child(2){
+                    color:$light;                    
+                } 
+            }
+        }      
+    }
+
+    &__right{
+        width: auto;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__name{
+            margin-bottom: 3px;
+            span{
+                color: $primary;
+            }
+        }
+
+        &__github{
+            text-decoration: none;
+            list-style: none;
+            a{
+                text-decoration:none;
+                color: $primary;
+                &:hover{
+                    color: $light;
+                    /* color: $light; */
+                    width: 100%;
+                    background-color: $primary;
+                    transition: 0.5s all ease-in;   
+                }
+                
+            }
+        }
+    }
+  }

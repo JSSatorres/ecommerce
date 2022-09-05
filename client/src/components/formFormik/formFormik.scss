@@ -1,0 +1,45 @@
+@import '../../styles/variables.scss';
+
+
+.formFormik__wrapper{
+  height: 65.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+
+  &__form{
+      background:$grey;
+      display: flex;
+      flex-direction: column;
+      padding: 105px 120px;
+      color: $dark;
+      border: 1px solid (120, 120, 120, .4);
+      border-radius: $borderRadius-sm;
+      box-shadow:$boxShadow;
+      width: 80%;
+      min-height:50vh;
+
+      h2{           
+          margin:0px 0px 20px;
+          display: flex;
+          justify-content: center;
+      }
+      
+      &__field{
+          margin-bottom: 8px;
+          display: flex;
+          justify-content: center;
+      }
+      &__label{
+          margin-bottom: 8px;
+          display: flex;
+          justify-content: start;
+      }
+      &__button{
+          @include buttonStandar;
+          margin-top: 13px;
+          width: 60%;
+          align-self:center;
+      }
+  }
+}

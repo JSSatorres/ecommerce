@@ -1,0 +1,120 @@
+@import '../../styles/variables.scss';
+
+.ShowCityWheatheContainer{
+    background:$grey;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    padding: 105px 30px;
+    color: $dark;
+    border: 1px solid (120, 120, 120, .4);
+    border-radius: $borderRadius-sm;
+    box-shadow:$boxShadow;
+    width: 80%;
+    min-height:50vh;
+
+    &__name{
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: $fonstSize-lg;
+        border-color:$primary ;        
+    }
+
+    &__div{
+       display: flex;
+       flex-direction: row;
+       padding: 10px;
+       justify-content: space-between;
+        &__country{
+            font-size:  $fonstSize-sm;
+        }
+        &__state{
+            font-size:  $fonstSize-sm;
+        }
+        
+        &__button{
+            @include buttonSmall;
+        }
+    }
+}
+
+.noCity{
+
+  h3 {
+      color: hsla(0, 0%, 0%, .9);
+      font: normal 50px Varela Round, sans-serif;
+      height: 40px;
+      left: 0;
+      letter-spacing: 5px;
+      margin: -80px 0 0 0;
+      text-align: center;
+      text-transform: uppercase;
+       
+      margin-top: 12%;
+      width: 100%;
+      animation: move linear 2000ms infinite;  
+    }
+    
+    @keyframes move {
+      0% {
+        text-shadow:
+          2px     -2px   0   $primary,
+          1.5px   -1.5px 0   $primary, 
+          1px     -1px   0   $primary, 
+          0.5px   -0.5px 0   $primary,
+          -2px    2px    0   $darkLight, 
+          -1.5px  1.5px  0   $darkLight, 
+          -1px    1px    0   $darkLight, 
+          -0.5px  0.5px  0   $darkLight
+        ;
+      }
+      25% {    
+        text-shadow:      
+        -2px    -2px    0   $darkLight, 
+        -1.5px  -1.5px  0   $darkLight, 
+        -1px    -1px    0   $darkLight, 
+        -0.5px  -0.5px  0   $darkLight,
+          2px 2px 0 $primary,
+          1.5px 1.5px 0  $primary, 
+          1px 1px 0  $primary, 
+          0.5px 0.5px 0  $primary    
+        ;
+      }
+      50% {
+        text-shadow:
+          -2px -2px 0 $primary,
+          -1.5px -1.5px 0  $primary, 
+          -1px -1px 0  $primary, 
+          -0.5px -0.5px 0  $primary,
+          2px    -2px    0   $darkLight, 
+          1.5px  -1.5px  0   $darkLight, 
+          1px    -1px    0   $darkLight, 
+          0.5px  -0.5px  0   $darkLight
+        ;
+      }
+      75% {
+        text-shadow:
+          2px    2px    0   $darkLight, 
+          1.5px  1.5px  0   $darkLight, 
+          1px    1px    0   $darkLight, 
+          0.5px  0.5px  0   $darkLight,
+          -2px -2px 0 $primary,
+          -1.5px -1.5px 0  $primary, 
+          -1px -1px 0  $primary, 
+          -0.5px -0.5px 0  $primary    
+        ;
+      }
+      100% {
+        text-shadow:
+          2px 2px 0 $primary,
+          1.5px 1.5px 0  $primary, 
+          1px 1px 0  $primary, 
+          0.5px 0.5px 0  $primary,  
+          -2px    -2px    0   $darkLight, 
+          -1.5px  -1.5px  0   $darkLight, 
+          -1px    -1px    0   $darkLight, 
+          -0.5px  -0.5px  0   $darkLight
+        ;
+      }  
+    }
+}

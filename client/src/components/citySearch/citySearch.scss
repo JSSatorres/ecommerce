@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.citySearchContainer{
+    background:$grey;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    min-height:50vh;
+    padding: 50px 20px;
+    color: $dark;
+    border: 1px solid (120, 120, 120, .4);
+    border-radius: $borderRadius-sm;
+    box-shadow:$boxShadow;
+
+    &__title{
+        margin-bottom: 50px;
+        text-align: center;        
+    }
+    
+    &__input{
+         @include inputStandar ;
+    }
+    
+    &__button{
+        @include buttonStandar;
+    }
+}
+
+.danger{
+    color: red;
+    margin-bottom: 10px;
+}
