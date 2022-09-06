@@ -1,14 +1,7 @@
 import app from "./server.js";
-import config from "./config/config.js";
-import connect from "./db/connect.js";
+import { PORT } from "./config/config.js";
+import dbConnectionMongo from "./database/db.js";
 
+dbConnectionMongo();
 
-/* connect().then(async function onServerInit() {
-    config.logger.info(`DB connected`); */
-  
-
-    app.listen(config.app.PORT, () => {
-      config.logger.info(`Server running at http://localhost:${config.app.PORT}`);
-    });
-
-  
+app.listen(PORT, () => console.log("listening", PORT));

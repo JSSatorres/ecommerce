@@ -1,37 +1,23 @@
-const Role = require('../models/role');
-const Usuario = require('../models/usuario');
+import Rol from "../models/rol-model.js";
+import User from "../models/user-models.js";
 
-const esRoleValido = async(rol = '') => {
+export const validatorRole = async (rol = "") => {
+  const existRol = await Rol.findOne({ rol });
+  if (!existRol) {
+    throw new Error(`the rol ${rol} is not valid`);
+  }
+};
 
-    const existeRol = await Role.findOne({ rol });
-    if ( !existeRol ) {
-        throw new Error(`El rol ${ rol } no está registrado en la BD`);
-    }
-}
+export const validatorEmail = async (email = "") => {
+  const emailExits = await User.findOne({ email });
+  if (emailExits) {
+    throw new Error(`the email  ${email} is already registred`);
+  }
+};
 
-const emailExiste = async( correo = '' ) => {
-
-    // Verificar si el correo existe
-    const existeEmail = await Usuario.findOne({ correo });
-    if ( existeEmail ) {
-        throw new Error(`El correo: ${ correo }, ya está registrado`);
-    }
-}
-
-const existeUsuarioPorId = async( id ) => {
-
-    // Verificar si el correo existe
-    const existeUsuario = await Usuario.findById(id);
-    if ( !existeUsuario ) {
-        throw new Error(`El id no existe ${ id }`);
-    }
-}
-
-
-
-module.exports = {
-    esRoleValido,
-    emailExiste,
-    existeUsuarioPorId
-}
-
+export const validatorMongoId = async (id = "") => {
+  const idExits = await User.findOne({ id });
+  if (!idExits) {
+    throw new Error(`the id: ${id} did not exist`);
+  }
+};
