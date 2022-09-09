@@ -40,10 +40,10 @@ export const getUser = async (req = request, res = response) => {
 };
 
 export const createUser = async (req = request, res = response) => {
-  const { name, password, email, rol } = req.body;
+  const { name, password, email } = req.body;
 
   try {
-    const newUser = await User.create({ name, password, email, rol });
+    const newUser = await User.create({ name, password, email });
 
     //encrrypt password
     const salt = bcrypt.genSaltSync(10);

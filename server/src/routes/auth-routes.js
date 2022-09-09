@@ -1,21 +1,20 @@
-const { Router } = require('express');
-const { check } = require('express-validator');
+import { Router } from "express";
+import { check } from "express-validator";
 
+import { checkFields } from "../middlewares/check-field.js";
 
-const { validarCampos } = require('../middlewares/validar-campos');
-
-
-const { login } = require('../controllers/auth');
-
+import { login } from "../controllers/auth.js";
 
 const router = Router();
 
-router.post('/login',[
-    check('correo', 'El correo es obligatorio').isEmail(),
-    check('password', 'La contraseña es obligatoria').not().isEmpty(),
-    validarCampos
-],login );
-
-
+router.post(
+  "/login",
+  [
+    check("correo", "El correo es obligatorio").isEmail(),
+    check("password", "La contraseña es obligatoria").not().isEmpty(),
+    checkFields,
+  ],
+  login
+);
 
 module.exports = router;

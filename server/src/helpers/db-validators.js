@@ -16,7 +16,9 @@ export const validatorEmail = async (email = "") => {
 };
 
 export const validatorMongoId = async (id = "") => {
-  const idExits = await User.findOne({ id });
+  const idExits = await User.findOne({ _id: id });
+  console.log(id);
+  console.log(idExits);
   if (!idExits) {
     throw new Error(`the id: ${id} did not exist`);
   }
