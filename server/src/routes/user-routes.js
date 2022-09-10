@@ -51,12 +51,12 @@ userRouter.post(
 
 userRouter.delete(
   "/:id",
-  //   [
-  validateJWT,
-  check("id", "No es un ID válido").isMongoId(),
-  check("id").custom(validatorMongoId),
-  checkField,
-  //   ],
+  [
+    validateJWT,
+    check("id", "No es un ID válido").isMongoId(),
+    check("id").custom(validatorMongoId),
+    checkField,
+  ],
   deleteUser
 );
 
